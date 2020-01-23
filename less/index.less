@@ -54,6 +54,150 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+//-------------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Bangers|Montserrat&display=swap');
+//variables 
+@main-color:#49636d;
+@hover-color:#80979d;
+@main-font:'Montserrat', sans-serif;
+@title-font:'Bangers', cursive;
+// mix-ins
+.center(){ //we want the parethesis because we want this mixin to be consumed by the compiler
+  display:flex;
+  justify-content:center;
+  background-color:@hover-color;
+}
+.bordered(){
+  border: 1px solid #000000;
+  padding: 2%;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+  font-family:@main-font;
+}
+h1, h2, h3, h4, h5 {
+  font-size: 2rem;
+  font-family:@title-font;
+}
+
+img {
+ width: 100%;
+ height: auto;
+}
+
+p {
+  line-height: 1.25;
+  margin: 20px 0;
+  font-size: 1.8rem;
+  .bordered();
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.6rem;
+}
+
+
+
+header {
+  border-bottom: 3px solid black;
+  margin: 20px 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  
+  
+  @media( max-width: 500px ) {
+    flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	width: 70%;
+	padding: 2%;
+	border-bottom: 1px solid black;
+  }// this closes the media query for header
+
+  h1 {
+    font-size: 2rem;
+
+    @media( max-width: 500px ) {
+      margin-bottom: 20px;
+    }// this closes the media query for h1
+  
+  }// this closes the h1
+   nav {
+	 margin-left: 30%;
+	text-decoration: none;
+    @media( max-width: 500px ) {
+      margin-left: 0;
+    }//this closes the media query for the nav
+    
+    // a {
+    //   margin-left: 20px;
+    //   font-size: 1.8rem;
+    // } this closes the links inside of the nav  
+    // .first-anchor {
+    //   margin-left: 0;
+   // } this close first-anchor 
+  }// this closes the nav
+}//this closes the header
+
+
+.main-content {
+	display:flex;
+	flex-wrap: wrap;
+	border-bottom: 3px solid black;
+	
+	
+
+  @media( max-width: 500px ) {
+	flex-direction: column;
+  }// this closes the media query for the main-content
+  
+  section{
+    margin: 20px 2.5%;
+	width: 100%;
+  
+    
+    @media( max-width: 500px ) {
+      width: 90%;
+    }  // this closes the media query for the section inside of main-content
+}// this closes the section inside of main-content
+}// this closes the main-content
+
+.main-footer {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  padding-top: 20px;
+
+  nav {
+    width: 100%;
+    display: flex;
+	justify-content: space-around;
+	
+  }// this closes the nav inside the footer
+}// this closes the footer
+
+
+footer{
+	
+	display:flex;
+	justify-content: center;
+
+}
+
+
 
